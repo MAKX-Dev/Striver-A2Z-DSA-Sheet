@@ -14,7 +14,6 @@ int main (){
     }
    int sum=0;
    temp=N;
-   
     while(temp>0){
        int digit=temp%10;
        sum+=pow(digit,count);
