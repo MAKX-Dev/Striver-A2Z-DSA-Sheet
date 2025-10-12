@@ -10,18 +10,25 @@ The A2Z roadmap is designed to build fundamentals from scratch and gradually pro
 
 ## 🗂️ Structure
 Striver-A2Z-DSA-Sheet/
-│── 01_Basics/
-│── 02_Arrays/
-│── 03_Strings/
-│── 04_Searching/
-│── 05_Sorting/
-│── 06_Recursion/
-│── 07_LinkedList/
-│── 08_StackQueue/
-│── 09_Trees/
-│── 10_Graphs/
-│── 11_DP/
-│── 12_Mixed/
+│── 01_Learn the Basics/
+│── 02_Important Sorting Techniques/
+│── 03_Solve Problems on Arrays/
+│── 04_Binary Search/
+│── 05_Strings/
+│── 06_Learn Linked List/
+│── 07_Recuesion/
+│── 08_Bit Manipulation/
+│── 09_Stack and Queus/
+│── 10_Sliding Window and Two pointer Combined/
+│── 11_Heaps/
+│── 12_Greedy Algorithms/
+|── 13_Binary Trees/
+│── 14_Binary Search Trees/
+│── 15_Graphs
+│── 16_Dynamic Programming/
+│── 17_Tries/
+│── 18_Strings/
+
 
 
 ##  How I Work
