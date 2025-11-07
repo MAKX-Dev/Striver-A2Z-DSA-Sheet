@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> memo;
-int f(int ind,vector<int>  &heights,int k){
+int f(int ind,vector<int>  &heights,int k,vector<int> &memo){
     if(heights.empty()){
         return 0;
     }
@@ -12,7 +11,7 @@ int f(int ind,vector<int>  &heights,int k){
     int minimumCost=INT_MAX;
     for(int j=1;j<=k;j++){
         if(ind-j>=0){
-            int jump=f(ind-j,heights,k)+abs(heights[ind]-heights[ind-j]);
+            int jump=f(ind-j,heights,k,memo)+abs(heights[ind]-heights[ind-j]);
             minimumCost=min(jump,minimumCost);
         }
     }
@@ -21,11 +20,11 @@ int f(int ind,vector<int>  &heights,int k){
 }
 int main(){
     vector<int> heights={15, 4, 1, 14, 15};
-    int k=3;
-    int ind=heights.size()-1;
     int n=heights.size();
-    memo.assign(n,-1);
-    int result=f(n-1,heights,k);
+    vector<int> memo(n-1);
+    int k=3;
+    int ind=n-1;
+    int result=f(n-1,heights,k,memo);
     cout<<result<<endl;
     return 0; 
 }
