@@ -1,39 +1,36 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int func(int ind,int last,vector<vector<int>> matrix,vector<int> &memo){
-    int maxi=0;
-    if(ind==0){
-        for(int i=0;i<matrix[0].size();i++){
-            if(i!=last){
-                maxi=max(maxi,matrix[0][i]);
+int func(const vector<vector<int>> &points){
+    int n=points.size();
+    if (n==0) return 0;
+    vector<int> prev(4,0);
+    prev[0]=max(points[0][1],points[0][2]);
+    prev[1]=max(points[0][0],points[0][2]);
+    prev[2]=max(points[0][0],points[0][1]);
+    prev[3]=max(points[0][0],max(points[0][1],points[0][2]));
+
+    for(int day=1;day<n;day++){
+        vector<int> temp(4, 0);
+        for(int last=0;last<4;last++){
+            temp[last]=0;
+            for (int task=0;task<=2;task++){
+                if (task!=last){
+                    temp[last]=max(temp[last],points[day][task]+prev[task]);
+                }
             }
         }
-        return maxi;
+        prev=temp;
     }
-    if(memo[ind]!=-1){
-        return memo[ind];
-    }
-    maxi=0;
-    for(int i=0;i<matrix[0].size();i++){
-        if(i!=last){
-            int points=matrix[ind][i]+func(ind-1,i,matrix,memo);
-            maxi=max(maxi,points);
-        }
-       
-    }
-    memo[ind]=maxi;
-    return maxi;
+    return prev[3];
 }
-int ninjaTraining(vector<vector<int>> &matrix,vector<int> &memo){
-    int n=matrix.size();
-    int m=matrix[0].size();
-    return func(n-1,m,matrix,memo);
-}
-int main(){
-    vector<vector<int>> matrix={{10, 40, 70}, {20, 50, 80}, {30, 60, 90}};
-    int n=matrix.size();
-    vector<int> memo(n,-1);
-    int result=ninjaTraining(matrix,memo);
-    cout<<"maximum possible merit points are: "<<result<<endl;
 
+int ninjaTraining(const vector<vector<int>> &matrix) {
+    return func(matrix);
+}
+
+int main() {
+    vector<vector<int>> matrix = {{10, 40, 70}, {20, 50, 80}, {30, 60, 90}};
+    int result=ninjaTraining(matrix);
+    cout << "maximum possible merit points are: " << result << endl;
+    return 0;
 }
