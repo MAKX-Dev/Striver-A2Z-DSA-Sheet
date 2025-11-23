@@ -70,10 +70,13 @@ int main() {
     head->next->next = new Node(2);
     head->next->next->next = new Node(0);
     head->next->next->next->next = new Node(1);
-    cout << "Origanl Linked List is: " << " ";
+    cout << "Orignal Linked List is: " << " ";
     printLL(head);
     cout << endl;
     head = addOne(head);
     cout << "After adding one LL is: " << " ";
     return 0;
 }
+
+// TC O(3N);
+// SC O(N);
