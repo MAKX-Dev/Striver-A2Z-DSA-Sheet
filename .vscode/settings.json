@@ -1,8 +1,10 @@
 {
-    "files.associations": {
-        "ostream": "cpp",
-        "vector": "cpp",
-        "iostream": "cpp",
-        "map": "cpp"
-    }
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Cascadia Code",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
