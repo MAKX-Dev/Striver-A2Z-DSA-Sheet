@@ -6,5 +6,6 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "files.autoSave": "afterDelay",
-  "terminal.integrated.defaultProfile.windows": "PowerShell"
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "C_Cpp.errorSquiggles": "disabled"
 }
